@@ -912,9 +912,7 @@ gsap.utils.toArray('.resource-card').forEach((card, i) => {
             });
         });
     </script>
-// MOBILE MENU JAVASCRIPT - Add this before </body> tag
 <script>
-// Mobile Menu Functionality
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const closeMobileMenu = document.getElementById('closeMobileMenu');
@@ -925,7 +923,7 @@ function openMobileMenu() {
     mobileMenu.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
     
-    // Animate menu items
+
     gsap.from('.mobile-nav-link', {
         opacity: 0,
         y: 30,
@@ -948,19 +946,18 @@ function closeMobileMenuFn() {
     });
 }
 
-// Event listeners
+
 mobileMenuBtn.addEventListener('click', openMobileMenu);
 closeMobileMenu.addEventListener('click', closeMobileMenuFn);
 mobileMenuBackdrop.addEventListener('click', closeMobileMenuFn);
 
-// Close menu when clicking a link
+
 mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
         closeMobileMenuFn();
     });
 });
 
-// Close menu on escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
         closeMobileMenuFn();
